@@ -81,3 +81,20 @@ void MainWindow::on_putBtn_clicked()
     ui->treeWidget->currentItem()->setBackgroundColor(0,Qt::green);
     ui->treeWidget->currentItem()->setBackgroundColor(1,Qt::green);
 }
+
+void MainWindow::on_unPutBtn_clicked()
+{
+    ui->treeWidget->currentItem()->setBackgroundColor(0,Qt::red);
+    ui->treeWidget->currentItem()->setBackgroundColor(1,Qt::red);
+}
+
+void MainWindow::on_saleBtn_clicked()
+{
+    ui->treeWidget->currentItem()->setBackgroundColor(0,Qt::yellow);
+    ui->treeWidget->currentItem()->setBackgroundColor(1,Qt::yellow);
+}
+
+void MainWindow::on_saveBtn_clicked()
+{
+
+}

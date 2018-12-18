@@ -1,10 +1,10 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QKeyEvent>
+
 #include <QTreeView>
+#include <QTreeWidgetItem>
 #include <QAbstractItemModel>
-#include <QStandardItemModel>
-#include <QStandardItem>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QJsonArray>
@@ -60,7 +60,7 @@ void simulatedClik(){
 
 }
 
-QJsonObject parsefilejson(){
+QJsonObject parseJson(){
     // QString val = R"_({"list":[{"categoryname":"одежда","stuff":[{"name":"футболка","status":"not_put"},{"name":"шорты","status":"not_put"},{"name":"джинсы","status":"not_put"},{"name":"кепка","status":"not_put"},{"name":"купальник","status":"not_put"}]},{"categoryname":"обувь","stuff":[{"name":"кроссовки","status":"not_put"}]}]})_";
      QString val;
       QFile file;
@@ -73,7 +73,7 @@ QJsonObject parsefilejson(){
     return document.object();;
 }
 
-QJsonObject parsefilejson(QString val){
+QJsonObject parseJson(QString val){
     // QString val = R"_({"list":[{"categoryname":"одежда","stuff":[{"name":"футболка","status":"not_put"},{"name":"шорты","status":"not_put"},{"name":"джинсы","status":"not_put"},{"name":"кепка","status":"not_put"},{"name":"купальник","status":"not_put"}]},{"categoryname":"обувь","stuff":[{"name":"кроссовки","status":"not_put"}]}]})_";
     QJsonDocument document = QJsonDocument::fromJson(val.toUtf8());
     return document.object();;
@@ -81,13 +81,15 @@ QJsonObject parsefilejson(QString val){
 
 void initTreeView(Ui::MainWindow* _ui,QString val ){
    _ui->treeWidget->clear();
+   _ui->treeWidget->setColumnCount(2);
+
    QList<QTreeWidgetItem *> listitems;
    QJsonObject root ;
-   _ui->treeWidget->setColumnCount(2);
+
    if(val != ""){
-       root = parsefilejson(val);
+       root = parseJson(val);
    }else{
-      root = parsefilejson();
+      root = parseJson();
    }
 
     QJsonValue jv = root.value("list");

@@ -30,13 +30,15 @@ SOURCES += \
         database.cpp \
         mainfunction.cpp \
     adddata.cpp \
-    imgwork.cpp
+    imgwork.cpp \
+    treejson.cpp
 
 HEADERS += \
         mainwindow.h \
         database.h \
     adddata.h \
-    imgwork.h
+    imgwork.h \
+    treejson.h
 
 FORMS += \
         mainwindow.ui \

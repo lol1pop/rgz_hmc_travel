@@ -35,6 +35,12 @@ private slots:
 
     void on_putBtn_clicked();
 
+    void on_unPutBtn_clicked();
+
+    void on_saleBtn_clicked();
+
+    void on_saveBtn_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
