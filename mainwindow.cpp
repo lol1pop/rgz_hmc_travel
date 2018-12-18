@@ -3,6 +3,11 @@
 #include "mainfunction.cpp"
 #include "adddata.h"
 #include "imgwork.h"
+#include <QTreeView>
+#include <QStandardItemModel>
+#include <QStandardItem>
+#include <QJsonObject>
+#include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -21,6 +26,7 @@ void MainWindow::initalComponents()
 {
     initComboBox(ui);
     viewDataBase(ui);
+    initTreeView(ui, "");
 }
 
 void MainWindow::on_updateBtn_clicked()
@@ -64,4 +70,14 @@ void MainWindow::on_tableView_clicked(const QModelIndex &index)
 {
     QByteArray arr = ui->tableView->model()->data(ui->tableView->model()->index(index.row(),8)).toByteArray();
     ImgWork::placeImgLable(arr, ui->imgSlot);
+    QString list = ui->tableView->model()->data(ui->tableView->model()->index(index.row(),4)).toString();
+    initTreeView(ui, list);
+    ui->nameTravel->setText( ui->tableView->model()->data(ui->tableView->model()->index(index.row(),1)).toString());
+    ui->routTravel->setText( ui->tableView->model()->data(ui->tableView->model()->index(index.row(),3)).toString());
+}
+
+void MainWindow::on_putBtn_clicked()
+{
+    ui->treeWidget->currentItem()->setBackgroundColor(0,Qt::green);
+    ui->treeWidget->currentItem()->setBackgroundColor(1,Qt::green);
 }

@@ -18,10 +18,100 @@ int main(int argc, char *argv[])
        QString wether,
        QByteArray photo,
        QString link)*/
-
-    db.createNodeAdventure("Вино и виноград","Абхазия","Новосибирск-Абхазия","футболка,шорты, штаны",14,"самолет","солнечно",ImgWork::setImg(ImgWork::loadImg("C:/Users/cplfa/Pictures/10424487.jpg",0,0)),"qweqwe");
-    db.createNodeAdventure("Музыка и танцы","Аргентина","Новосибирск-Москва-Аргентина","sgj",10,"машина","ветренно",ImgWork::setImg(ImgWork::loadImg("C:/Users/cplfa/Pictures/FUuMd10EBls.jpg",0,0)),"arey");
-    db.createNodeAdventure("Морепродукты и сухофрукты","Вьетнам","Иркутск-Вьетнам","lfkj",8,"самолет-автобус","облачно", ImgWork::setImg(ImgWork::loadImg("C:/Users/cplfa/Pictures/s150102.jpg",0,0)),"arty");
+    QString list;
+    list = R"({
+           "list": [
+               {
+                   "одежда": [
+                       {
+                           "футболка": "not_put"
+                       },
+                       {
+                           "шорты": "not_put"
+                       },
+                       {
+                           "джинсы": "not_put"
+                       },
+                       {
+                           "кепка": "not_put"
+                       },
+                       {
+                           "купальник": "not_put"
+                       }
+                   ]
+               },
+               {
+                   "обувь": [
+                       {
+                           "кроссовки": "not_put"
+                       }
+                   ]
+               }
+           ]
+       }   )";
+    db.createNodeAdventure("Вино и виноград","Абхазия","Новосибирск-Абхазия",list,14,"самолет","солнечно",ImgWork::setImg(ImgWork::loadImg("C:/Users/cplfa/Pictures/10424487.jpg",0,0)),"qweqwe");
+    list = R"({
+           "list": [
+               {
+                   "одежда": [
+                       {
+                           "футболка": "not_put"
+                       },
+                       {
+                           "джинсы": "not_put"
+                       },
+                       {
+                           "кофта": "not_put"
+                       },
+                       {
+                           "шорты": "not_put"
+                       }
+                   ]
+               },
+               {
+                   "обувь": [
+                       {
+                           "сандали": "not_put"
+                       },
+                       {
+                           "кроссовки": "not_put"
+                       }
+                   ]
+               }
+           ]
+       })";
+    db.createNodeAdventure("Музыка и танцы","Аргентина","Новосибирск-Москва-Аргентина",list,10,"машина","ветренно",ImgWork::setImg(ImgWork::loadImg("C:/Users/cplfa/Pictures/FUuMd10EBls.jpg",0,0)),"arey");
+    list = R"({
+           "list": [
+               {
+                   "одежда": [
+                       {
+                           "пуховик": "not_put"
+                       },
+                       {
+                           "джинсы": "put"
+                       },
+                       {
+                           "колготки": "sale"
+                       },
+                       {
+                           "кофта": "sale"
+                       }
+                   ]
+               },
+               {
+                   "обувь": [
+                       {
+                           "валенки": "put"
+                       },
+                       {
+                           "ботинки": "put"
+                       }
+                   ]
+               }
+           ]
+       })";
+    db.createNodeAdventure("Морепродукты и сухофрукты","Вьетнам","Иркутск-Вьетнам",list,8,"самолет-автобус","облачно", ImgWork::setImg(ImgWork::loadImg("C:/Users/cplfa/Pictures/s150102.jpg",0,0)),"arty");
    /*  db.createNodeAdventure("Вода и солнцу","Греция","Санкт-Петербург - Греция","sgj",16,"поезд","солнечно","sgjhf");
     db.createNodeAdventure("Солнце и песок","Египет","Томск-Египет","sgj",24,"самолет","дождь","dgjf");
     db.createNodeAdventure("Пицца и паста","Италия","Москва-Италия","sgj",6,"самолет-корабль","солнечно","sfgdh");
