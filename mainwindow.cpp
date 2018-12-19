@@ -67,9 +67,9 @@ void MainWindow::on_removeBtn_clicked()
 
 void MainWindow::on_tableView_clicked(const QModelIndex &index)
 {
-    QByteArray arr = ui->tableView->model()->data(ui->tableView->model()->index(index.row(),8)).toByteArray();
+    QByteArray arr(ui->tableView->model()->data(ui->tableView->model()->index(index.row(),8)).toByteArray());
     ImgWork::placeImgLable(arr, ui->imgSlot);
-    QString list = ui->tableView->model()->data(ui->tableView->model()->index(index.row(),4)).toString();
+    QString list(ui->tableView->model()->data(ui->tableView->model()->index(index.row(),4)).toString());
     initTreeView(ui, list);
     ui->nameTravel->setText( ui->tableView->model()->data(ui->tableView->model()->index(index.row(),1)).toString());
     ui->routTravel->setText( ui->tableView->model()->data(ui->tableView->model()->index(index.row(),3)).toString());
@@ -78,9 +78,9 @@ void MainWindow::on_tableView_clicked(const QModelIndex &index)
 
 void MainWindow::editStatusTree(QString status)
 {
-    QString strJsonList = ui->tableView->model()->data(ui->tableView->model()->index(ui->tableView->currentIndex().row(),4)).toString();
-    QString keyEdit = ui->treeWidget->currentItem()->text(0);
-    QJsonObject jsonList = editJson(strJsonList,keyEdit,status);
+    QString strJsonList(ui->tableView->model()->data(ui->tableView->model()->index(ui->tableView->currentIndex().row(),4)).toString());
+    QString keyEdit(ui->treeWidget->currentItem()->text(0));
+    QJsonObject jsonList(editJson(strJsonList,keyEdit,status));
     QJsonDocument doc(jsonList);
     QString strJson(doc.toJson(QJsonDocument::Compact));
     ui->tableView->model()->setData(ui->tableView->model()->index(ui->tableView->currentIndex().row(),4),strJson);
@@ -89,22 +89,54 @@ void MainWindow::editStatusTree(QString status)
 
 void MainWindow::on_putBtn_clicked()
 {
-    ui->treeWidget->currentItem()->setBackgroundColor(0,Qt::green);
-    ui->treeWidget->currentItem()->setBackgroundColor(1,Qt::green);
-    editStatusTree("put");
+    if( ui->treeWidget->currentItem()->text(1) != "status"){
+        ui->treeWidget->currentItem()->setBackgroundColor(0,Qt::green);
+        ui->treeWidget->currentItem()->setBackgroundColor(1,Qt::green);
+        ui->treeWidget->currentItem()->setText(1,"put");
+        editStatusTree("put");}
 }
 
 void MainWindow::on_unPutBtn_clicked()
 {
-    ui->treeWidget->currentItem()->setBackgroundColor(0,Qt::red);
-    ui->treeWidget->currentItem()->setBackgroundColor(1,Qt::red);
-     editStatusTree("not_put");
+    if( ui->treeWidget->currentItem()->text(1) != "status"){
+        ui->treeWidget->currentItem()->setBackgroundColor(0,Qt::red);
+        ui->treeWidget->currentItem()->setBackgroundColor(1,Qt::red);
+        ui->treeWidget->currentItem()->setText(1,"not_put");
+        editStatusTree("not_put");}
 }
 
 void MainWindow::on_saleBtn_clicked()
 {
-    ui->treeWidget->currentItem()->setBackgroundColor(0,Qt::yellow);
-    ui->treeWidget->currentItem()->setBackgroundColor(1,Qt::yellow);
-     editStatusTree("sale");
+    if( ui->treeWidget->currentItem()->text(1) != "status"){
+        ui->treeWidget->currentItem()->setBackgroundColor(0,Qt::yellow);
+        ui->treeWidget->currentItem()->setBackgroundColor(1,Qt::yellow);
+        ui->treeWidget->currentItem()->setText(1,"sale");
+        editStatusTree("sale");}
 }
 
+
+void MainWindow::on_insertBtn_clicked()
+{
+    QString categories(ui->insertBox->currentText());
+    QString staff(ui->insertEdit->text());
+    QString strJsonList(ui->tableView->model()->data(ui->tableView->model()->index(ui->tableView->currentIndex().row(),4)).toString());
+    QJsonObject jsonList(insertToJson(strJsonList,categories,staff));
+    QJsonDocument doc(jsonList);
+    QString strJson(doc.toJson(QJsonDocument::Compact));
+    ui->tableView->model()->setData(ui->tableView->model()->index(ui->tableView->currentIndex().row(),4),strJson);
+    QString list(ui->tableView->model()->data(ui->tableView->model()->index(ui->tableView->currentIndex().row(),4)).toString());
+    initTreeView(ui, list);
+
+}
+
+void MainWindow::on_delBtn_clicked()
+{
+    QString strJsonList(ui->tableView->model()->data(ui->tableView->model()->index(ui->tableView->currentIndex().row(),4)).toString());
+    QString keyDel(ui->treeWidget->currentItem()->text(0));
+    QJsonObject jsonList(removeFromJson(strJsonList,keyDel));
+    QJsonDocument doc(jsonList);
+    QString strJson(doc.toJson(QJsonDocument::Compact));
+    ui->tableView->model()->setData(ui->tableView->model()->index(ui->tableView->currentIndex().row(),4),strJson);
+    QString list(ui->tableView->model()->data(ui->tableView->model()->index(ui->tableView->currentIndex().row(),4)).toString());
+    initTreeView(ui, list);
+}

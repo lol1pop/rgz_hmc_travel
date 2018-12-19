@@ -1,11 +1,11 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "treejson.h"
-#include "jsonwork.cpp"
 #include <QKeyEvent>
 #include <QTreeView>
 #include <QTreeWidgetItem>
 #include <QAbstractItemModel>
+#include "jsonwork.cpp"
 
 
 void viewDataBase(Ui::MainWindow* _ui){
@@ -25,8 +25,8 @@ void viewDataBase(Ui::MainWindow* _ui){
     _ui->tableView->setModel(tableModel);
     _ui->tableView->setColumnHidden (0,true);
     _ui->tableView->setColumnHidden (1,true);
-    _ui->tableView->setColumnHidden (4,true);
     _ui->tableView->setColumnHidden (3,true);
+    _ui->tableView->setColumnHidden (4,true);
     _ui->tableView->setColumnHidden (8,true);
 
 }
@@ -39,21 +39,18 @@ void initComboBox(Ui::MainWindow* _ui){
 int searchComboBox(Ui::MainWindow* _ui){
     switch (_ui->searchBox->currentIndex()) {
     case 0:
-        return 1;
-    case 1:
         return 2;
-    case 2:
+    case 1:
         return 3;
-    case 3:
+    case 2:
         return 5;
-    case 4:
+    case 3:
         return 6;
-    case 5:
-        return 7;
     default:
         return 0;
     }
 }
+
 
 void simulatedClik(){
 
@@ -62,6 +59,8 @@ void simulatedClik(){
 void initTreeView(Ui::MainWindow* _ui,QString val ){
    _ui->treeWidget->clear();
    _ui->treeWidget->setColumnCount(2);
+   _ui->treeWidget->header()->resizeSection(0,200);
+   _ui->treeWidget->header()->resizeSection(1,60);
 
    QJsonObject root ;
 
@@ -70,7 +69,8 @@ void initTreeView(Ui::MainWindow* _ui,QString val ){
    }else{
       root = parseJson();
    }
-   QList<QTreeWidgetItem *> listitems = TreeJson::jsonInTreeView(root);
 
-    _ui->treeWidget->addTopLevelItems(listitems);
+   QList<QTreeWidgetItem *> listitems = TreeJson::jsonInTreeView(root);
+   _ui->treeWidget->addTopLevelItems(listitems);
+   TreeJson::fillCboxCategories(_ui,root);
 }

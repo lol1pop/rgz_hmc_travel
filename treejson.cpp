@@ -14,7 +14,6 @@ QList<QTreeWidgetItem *>  TreeJson::jsonInTreeView(QJsonObject root)
         for(int i = 0; i < ja.count(); i++){
             QJsonObject subtree = ja.at(i).toObject();
             for(auto key : subtree.keys() ){
-                qWarning() <<" >"<<key;
                 QTreeWidgetItem *item = new QTreeWidgetItem();
                 item->setText(0, key);
                 item->setText(1, "status");
@@ -49,5 +48,20 @@ QList<QTreeWidgetItem *>  TreeJson::jsonInTreeView(QJsonObject root)
             }
         }
     }
-           return listitems;
+    return listitems;
+}
+
+void TreeJson::fillCboxCategories(Ui::MainWindow *_ui, QJsonObject root)
+{
+    _ui->insertBox->clear();
+    QJsonValue jv = root.value("list");
+    if(jv.isArray()){
+        QJsonArray ja = jv.toArray();
+        for(int i = 0; i < ja.count(); i++){
+            QJsonObject subtree = ja.at(i).toObject();
+            for(auto key : subtree.keys() ){
+                _ui->insertBox->addItem(key);
+            }
+        }
+    }
 }

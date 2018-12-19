@@ -40,6 +40,10 @@ private slots:
 
     void on_saleBtn_clicked();
 
+    void on_insertBtn_clicked();
+
+    void on_delBtn_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

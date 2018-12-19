@@ -1,6 +1,7 @@
 #pragma comment(lib,"User32.lib")
 #include "mainwindow.h"
 #include <QApplication>
+#include <QFile>
 #include "database.h"
 #include "imgwork.h"
 int main(int argc, char *argv[])
@@ -125,10 +126,6 @@ int main(int argc, char *argv[])
     db.createNodeAdventure("Морепродукты","Тайланд","Владивосток-Тайланд","sghf",12,"машина-самолет","облачно","ikgufl");
     db.createNodeAdventure("Бонжур","Франция","Австрия-Франция","kj",11,"поезд-машина","смерч","lhk");
     db.createNodeAdventure("Мясо и пиво","Чехия","Москва-Чехия","fh",16,"самолет","сухие грозы","mzxh");*/
-
-
-
-
 
     MainWindow w;
     w.show();

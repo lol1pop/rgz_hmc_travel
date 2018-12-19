@@ -10,6 +10,12 @@
     <height>700</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>670</width>
+    <height>700</height>
+   </size>
+  </property>
   <property name="maximumSize">
    <size>
     <width>670</width>
@@ -17,7 +23,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Treval</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QTableView" name="tableView">
@@ -118,8 +124,8 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>610</y>
-      <width>101</width>
+      <y>570</y>
+      <width>51</width>
       <height>31</height>
      </rect>
     </property>
@@ -130,9 +136,9 @@
    <widget class="QPushButton" name="unPutBtn">
     <property name="geometry">
      <rect>
-      <x>110</x>
-      <y>610</y>
-      <width>101</width>
+      <x>70</x>
+      <y>570</y>
+      <width>51</width>
       <height>31</height>
      </rect>
     </property>
@@ -143,9 +149,9 @@
    <widget class="QPushButton" name="saleBtn">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>610</y>
-      <width>101</width>
+      <x>130</x>
+      <y>570</y>
+      <width>51</width>
       <height>31</height>
      </rect>
     </property>
@@ -201,7 +207,7 @@
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="Line" name="line">
+   <widget class="Line" name="wline">
     <property name="geometry">
      <rect>
       <x>320</x>
@@ -214,7 +220,7 @@
      <enum>Qt::Horizontal</enum>
     </property>
    </widget>
-   <widget class="Line" name="line_2">
+   <widget class="Line" name="wline_2">
     <property name="geometry">
      <rect>
       <x>310</x>
@@ -227,7 +233,7 @@
      <enum>Qt::Vertical</enum>
     </property>
    </widget>
-   <widget class="Line" name="line_3">
+   <widget class="Line" name="wline_3">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -246,7 +252,7 @@
       <x>10</x>
       <y>310</y>
       <width>301</width>
-      <height>301</height>
+      <height>261</height>
      </rect>
     </property>
     <column>
@@ -290,7 +296,7 @@
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="Line" name="line_4">
+   <widget class="Line" name="wline_4">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -301,6 +307,68 @@
     </property>
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="insertBtn">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>570</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>add</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="insertBox">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>610</y>
+      <width>131</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="insertEdit">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>610</y>
+      <width>171</width>
+      <height>21</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="delBtn">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>570</y>
+      <width>51</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>del</string>
+    </property>
+   </widget>
+   <widget class="Line" name="line">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>570</y>
+      <width>16</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">width: 1px</string>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
     </property>
    </widget>
   </widget>
