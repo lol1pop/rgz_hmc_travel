@@ -3,9 +3,8 @@
 #include "mainfunction.cpp"
 #include "adddata.h"
 #include "imgwork.h"
+#include "treejson.h"
 #include <QTreeView>
-#include <QStandardItemModel>
-#include <QStandardItem>
 #include <QJsonObject>
 #include <QMessageBox>
 
@@ -76,10 +75,23 @@ void MainWindow::on_tableView_clicked(const QModelIndex &index)
     ui->routTravel->setText( ui->tableView->model()->data(ui->tableView->model()->index(index.row(),3)).toString());
 }
 
+
+void MainWindow::editStatusTree(QString status)
+{
+    QString strJsonList = ui->tableView->model()->data(ui->tableView->model()->index(ui->tableView->currentIndex().row(),4)).toString();
+    QString keyEdit = ui->treeWidget->currentItem()->text(0);
+    QJsonObject jsonList = editJson(strJsonList,keyEdit,status);
+    QJsonDocument doc(jsonList);
+    QString strJson(doc.toJson(QJsonDocument::Compact));
+    ui->tableView->model()->setData(ui->tableView->model()->index(ui->tableView->currentIndex().row(),4),strJson);
+}
+
+
 void MainWindow::on_putBtn_clicked()
 {
     ui->treeWidget->currentItem()->setBackgroundColor(0,Qt::green);
     ui->treeWidget->currentItem()->setBackgroundColor(1,Qt::green);
+    editStatusTree("put");
 }
 
 void MainWindow::on_unPutBtn_clicked()
@@ -94,7 +106,3 @@ void MainWindow::on_saleBtn_clicked()
     ui->treeWidget->currentItem()->setBackgroundColor(1,Qt::yellow);
 }
 
-void MainWindow::on_saveBtn_clicked()
-{
-
-}

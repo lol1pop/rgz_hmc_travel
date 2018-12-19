@@ -19,6 +19,7 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    void editStatusTree(QString);
 private:
     void initalComponents();
 
@@ -38,8 +39,6 @@ private slots:
     void on_unPutBtn_clicked();
 
     void on_saleBtn_clicked();
-
-    void on_saveBtn_clicked();
 
 private:
     Ui::MainWindow *ui;

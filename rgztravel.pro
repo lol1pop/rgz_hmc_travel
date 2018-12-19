@@ -31,7 +31,8 @@ SOURCES += \
         mainfunction.cpp \
     adddata.cpp \
     imgwork.cpp \
-    treejson.cpp
+    treejson.cpp \
+    jsonwork.cpp
 
 HEADERS += \
         mainwindow.h \
