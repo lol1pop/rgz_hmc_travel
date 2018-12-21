@@ -172,7 +172,7 @@
      <string>PushButton</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_9">
+   <widget class="QPushButton" name="cardTravelBtn">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -182,7 +182,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>Card traveler</string>
     </property>
    </widget>
    <widget class="QLabel" name="imgSlot">

@@ -7,6 +7,7 @@
 #include <QSortFilterProxyModel>
 #include <QMessageBox>
 #include "database.h"
+#include "formcardtraveler.h"
 
 namespace Ui {
 class MainWindow;
@@ -43,6 +44,8 @@ private slots:
     void on_insertBtn_clicked();
 
     void on_delBtn_clicked();
+
+    void on_cardTravelBtn_clicked();
 
 private:
     Ui::MainWindow *ui;

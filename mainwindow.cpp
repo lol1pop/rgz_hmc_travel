@@ -140,3 +140,9 @@ void MainWindow::on_delBtn_clicked()
     QString list(ui->tableView->model()->data(ui->tableView->model()->index(ui->tableView->currentIndex().row(),4)).toString());
     initTreeView(ui, list);
 }
+
+void MainWindow::on_cardTravelBtn_clicked()
+{
+    FormCardTraveler *fct = new FormCardTraveler();
+    fct->show();
+}

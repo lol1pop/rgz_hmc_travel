@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui sql
+QT       += core gui sql printsupport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -32,18 +32,21 @@ SOURCES += \
     adddata.cpp \
     imgwork.cpp \
     treejson.cpp \
-    jsonwork.cpp
+    jsonwork.cpp \
+    formcardtraveler.cpp
 
 HEADERS += \
         mainwindow.h \
         database.h \
     adddata.h \
     imgwork.h \
-    treejson.h
+    treejson.h \
+    formcardtraveler.h
 
 FORMS += \
         mainwindow.ui \
-    adddata.ui
+    adddata.ui \
+    formcardtraveler.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
