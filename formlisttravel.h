@@ -29,6 +29,8 @@ private slots:
 
     void on_editBtn_clicked();
 
+    void on_clearBtn_clicked();
+
 private:
     Ui::FormListTravel *ui;
 };

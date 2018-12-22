@@ -57,6 +57,7 @@ void FormCardTraveler::on_pushButton_clicked()
     QRect printer_rect(printer.pageRect());
 
     QTextDocument doc;
+    doc.setDefaultFont(QFont("Helvetica", 14));
     doc.setPageSize(printer_rect.size());
     doc.setPlainText(ui->label_2->text() +":\n" +
                      ui->lineEdit->text() +"\n" +
@@ -67,6 +68,7 @@ void FormCardTraveler::on_pushButton_clicked()
     QRect docRect = QRect(QPoint(0,0), doc.size().toSize());
 
     QTextDocument text;
+    text.setDefaultFont(QFont("Helvetica", 14));
     text.setPageSize(printer_rect.size());
     text.setPlainText(ui->label->text() +":\n" + ui->textEdit->toPlainText());
     QRect textRect = QRect(QPoint(0,0), text.size().toSize());

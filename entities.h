@@ -11,9 +11,10 @@ public:
     QString name;
     QString route;
     Cart(QPixmap nimg,
-         QString nnode,
          QString nname,
-         QString nroute){
+         QString nroute,
+         QString nnode
+        ){
          this->img = nimg;
          this->node = nnode;
          this->name = nname;

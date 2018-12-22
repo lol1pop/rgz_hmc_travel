@@ -182,6 +182,19 @@ color: rgb(0, 0, 0);</string>
     <string>load picture</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="clearBtn">
+   <property name="geometry">
+    <rect>
+     <x>420</x>
+     <y>440</y>
+     <width>141</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Clear Form</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>
