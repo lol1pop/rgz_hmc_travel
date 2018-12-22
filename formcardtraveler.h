@@ -2,8 +2,6 @@
 #define FORMCARDTRAVELER_H
 
 #include <QWidget>
-#include <QFileDialog>
-#include <QtDebug>
 
 namespace Ui {
 class FormCardTraveler;

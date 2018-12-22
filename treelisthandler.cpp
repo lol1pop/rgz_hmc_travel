@@ -1,31 +1,17 @@
-#include <QJsonDocument>
-#include <QJsonObject>
-#include <QJsonArray>
-#include <QFile>
+#include "treelisthandler.h"
 
-#include <QtDebug>
-#include <QMessageBox>
+treeListHandler::treeListHandler()
+{
 
-QJsonObject parseJson(){
-    // QString val = R"_({"list":[{"categoryname":"одежда","stuff":[{"name":"футболка","status":"not_put"},{"name":"шорты","status":"not_put"},{"name":"джинсы","status":"not_put"},{"name":"кепка","status":"not_put"},{"name":"купальник","status":"not_put"}]},{"categoryname":"обувь","stuff":[{"name":"кроссовки","status":"not_put"}]}]})_";
-     QString val;
-      QFile file;
-      file.setFileName("test.json");
-      file.open(QIODevice::ReadOnly | QIODevice::Text);
-      val = file.readAll();
-      file.close();
-      //qWarning() << val;
-      QJsonDocument document = QJsonDocument::fromJson(val.toUtf8());
-    return document.object();;
 }
 
-QJsonObject parseJson(QString val){
+QJsonObject treeListHandler::parseJson(QString val){
     // QString val = R"_({"list":[{"categoryname":"одежда","stuff":[{"name":"футболка","status":"not_put"},{"name":"шорты","status":"not_put"},{"name":"джинсы","status":"not_put"},{"name":"кепка","status":"not_put"},{"name":"купальник","status":"not_put"}]},{"categoryname":"обувь","stuff":[{"name":"кроссовки","status":"not_put"}]}]})_";
     QJsonDocument document = QJsonDocument::fromJson(val.toUtf8());
     return document.object();;
 }
 
-QJsonObject editJson(QString strJsonList, QString keyEdit, QString value){
+QJsonObject treeListHandler::editJson(QString strJsonList, QString keyEdit, QString value){
     QJsonObject root ;
     root = parseJson(strJsonList);
     bool edit = false;
@@ -68,7 +54,7 @@ QJsonObject editJson(QString strJsonList, QString keyEdit, QString value){
     return root;
 }
 
-QJsonObject insertToJson(QString strJsonList, QString keyInsert, QString value){
+QJsonObject treeListHandler::insertToJson(QString strJsonList, QString keyInsert, QString value){
     QJsonObject root ;
     root = parseJson(strJsonList);
     bool edit = false;
@@ -102,7 +88,7 @@ QJsonObject insertToJson(QString strJsonList, QString keyInsert, QString value){
     return root;
 }
 
-QJsonObject insertToJson(QString strJsonList, QString keyInsert){
+QJsonObject treeListHandler::insertToJson(QString strJsonList, QString keyInsert){
     QJsonObject root ;
     root = parseJson(strJsonList);
     QJsonValue jv = root["list"];
@@ -125,7 +111,7 @@ QJsonObject insertToJson(QString strJsonList, QString keyInsert){
     return root;
 }
 
-QJsonObject removeFromJson(QString strJsonList, QString keyDell){
+QJsonObject treeListHandler::removeFromJson(QString strJsonList, QString keyDell){
     QJsonObject root ;
     root = parseJson(strJsonList);
     bool edit = false;

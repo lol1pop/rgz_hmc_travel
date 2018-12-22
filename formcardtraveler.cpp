@@ -1,14 +1,12 @@
 #include "formcardtraveler.h"
 #include "ui_formcardtraveler.h"
+
 #include "imgwork.h"
-#include <QFile>
-#include <QDial>
-#include <QDataStream>
 #include <QtPrintSupport/QPrinter>
-#include <QApplication>
 #include <QPainter>
 #include <QPoint>
 #include <QMessageBox>
+
 
 FormCardTraveler::FormCardTraveler(QWidget *parent) :
     QWidget(parent),
@@ -43,10 +41,10 @@ void FormCardTraveler::on_addImgBtn_2_clicked()
 void FormCardTraveler::on_pushButton_clicked()
 {
 
-    if(!ui->lineEdit->text().isNull() &&
-       !ui->lineEdit_2->text().isNull() &&
-       !ui->lineEdit_3->text().isNull() &&
-       !ui->textEdit->toPlainText().isNull() &&
+    if(!ui->lineEdit->text().isEmpty() &&
+       !ui->lineEdit_2->text().isEmpty()  &&
+       !ui->lineEdit_3->text().isEmpty() &&
+       !ui->textEdit->toPlainText().isEmpty() &&
        !photoSlot.isNull() &&
        !imgSlot.isNull() &&
        !img2Slot.isNull()){
@@ -82,12 +80,12 @@ void FormCardTraveler::on_pushButton_clicked()
     painter.drawPixmap(photoRect,photoSlot,photoRect);
     painter.translate(photoRect.width() + 10,0);
     doc.drawContents(&painter,docRect);
-    painter.translate(500,0);
-    text.drawContents(&painter, textRect);
-    painter.translate((-1)*(photoRect.width() + 10 + 500),imgRect.height() + 50);
+    painter.translate((-1)*(photoRect.width() + 10),imgRect.height() + 50);
     painter.drawPixmap(imgRect,imgSlot,imgRect);
     painter.translate(imgRect.width() + 50,0);
     painter.drawPixmap(img2Rect,img2Slot,img2Rect);
+    painter.translate((-1)*(imgRect.width() + 50) ,img2Rect.height() + 50);
+    text.drawContents(&painter, textRect);
     QMessageBox::information(this,"Name Search:", "TravelCard.pdf create!!");
     close();
     }else{

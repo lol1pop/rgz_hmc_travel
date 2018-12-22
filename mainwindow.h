@@ -8,6 +8,7 @@
 #include <QMessageBox>
 #include "database.h"
 #include "formcardtraveler.h"
+#include "formlisttravel.h"
 
 namespace Ui {
 class MainWindow;
@@ -46,6 +47,8 @@ private slots:
     void on_delBtn_clicked();
 
     void on_cardTravelBtn_clicked();
+
+    void on_listTravelBtn_clicked();
 
 private:
     Ui::MainWindow *ui;

@@ -1,5 +1,5 @@
-#ifndef TREEJSON_H
-#define TREEJSON_H
+#ifndef TREEJSONADDFORM_H
+#define TREEJSONADDFORM_H
 
 #include <QTreeWidgetItem>
 #include <QAbstractItemModel>
@@ -9,15 +9,15 @@
 #include <QJsonArray>
 #include <QList>
 #include <QDebug>
-#include "mainwindow.h"
-#include "ui_mainwindow.h"
+#include "adddata.h"
+#include "ui_adddata.h"
 
-class TreeJson
+class TreeJsonAddForm
 {
 public:
-    TreeJson();
+    TreeJsonAddForm();
     static QList<QTreeWidgetItem *> jsonInTreeView(QJsonObject root);
-    static void fillCboxCategories(Ui::MainWindow* _ui,QJsonObject root);
+    static void fillCboxCategories(Ui::AddData* _ui,QJsonObject root);
 };
 
-#endif // TREEJSON_H
+#endif // TREEJSONADDFORM_H

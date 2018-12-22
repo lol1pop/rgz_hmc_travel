@@ -7,6 +7,7 @@
 #include <QTreeView>
 #include <QJsonObject>
 #include <QMessageBox>
+#include "entities.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -62,6 +63,11 @@ void MainWindow::on_removeBtn_clicked()
 {
    int row = ui->tableView->currentIndex().row();
    ui->tableView->model()->removeRow(row);
+
+   ui->nameTravel->setText( "" );
+   ui->routTravel->setText( "" );
+   ui->imgSlot->clear();
+
    viewDataBase(ui);
 }
 
@@ -117,6 +123,8 @@ void MainWindow::on_saleBtn_clicked()
 
 void MainWindow::on_insertBtn_clicked()
 {
+
+    if(!ui->insertEdit->text().isEmpty()){
     QString categories(ui->insertBox->currentText());
     QString staff(ui->insertEdit->text());
     QString strJsonList(ui->tableView->model()->data(ui->tableView->model()->index(ui->tableView->currentIndex().row(),4)).toString());
@@ -125,7 +133,9 @@ void MainWindow::on_insertBtn_clicked()
     QString strJson(doc.toJson(QJsonDocument::Compact));
     ui->tableView->model()->setData(ui->tableView->model()->index(ui->tableView->currentIndex().row(),4),strJson);
     QString list(ui->tableView->model()->data(ui->tableView->model()->index(ui->tableView->currentIndex().row(),4)).toString());
-    initTreeView(ui, list);
+    initTreeView(ui, list);}else{
+        QMessageBox::information(this,"add Tree","А Можно добовлять не пустоту?");
+    }
 
 }
 
@@ -145,4 +155,21 @@ void MainWindow::on_cardTravelBtn_clicked()
 {
     FormCardTraveler *fct = new FormCardTraveler();
     fct->show();
+}
+
+void MainWindow::on_listTravelBtn_clicked()
+{
+
+
+    if(ui->nameTravel->text().isEmpty() || ui->nameTravel->text() == "Название Поездки"){
+        FormListTravel *flt = new FormListTravel();
+        flt->show();
+    }else{
+    Tur tur;
+    tur.name = ui->tableView->model()->data(ui->tableView->model()->index(ui->tableView->currentIndex().row(),1)).toString();
+    tur.route =  ui->tableView->model()->data(ui->tableView->model()->index(ui->tableView->currentIndex().row(),3)).toString();
+    QByteArray inByteArray(ui->tableView->model()->data(ui->tableView->model()->index(ui->tableView->currentIndex().row(),8)).toByteArray());
+    tur.img.loadFromData(inByteArray);
+    FormListTravel *flt = new FormListTravel(nullptr,&tur);
+    flt->show();}
 }

@@ -1,11 +1,11 @@
-#include "treejson.h"
+#include "treejsonaddform.h"
 
-TreeJson::TreeJson()
+TreeJsonAddForm::TreeJsonAddForm()
 {
 
 }
 
-QList<QTreeWidgetItem *>  TreeJson::jsonInTreeView(QJsonObject root)
+QList<QTreeWidgetItem *> TreeJsonAddForm::jsonInTreeView(QJsonObject root)
 {
     QList<QTreeWidgetItem *> listitems;
     QJsonValue jv = root.value("list");
@@ -16,7 +16,6 @@ QList<QTreeWidgetItem *>  TreeJson::jsonInTreeView(QJsonObject root)
             for(auto key : subtree.keys() ){
                 QTreeWidgetItem *item = new QTreeWidgetItem();
                 item->setText(0, key);
-                item->setText(1, "status");
                 QJsonValue jvChild = subtree.value(key);
                 if(jvChild.isArray()){
                     QJsonArray jaChild = jvChild.toArray();
@@ -26,19 +25,6 @@ QList<QTreeWidgetItem *>  TreeJson::jsonInTreeView(QJsonObject root)
                         for(auto keyChild : subtreeChild.keys() ){
                             child->setText(0,keyChild);
                             QString val = subtreeChild.value(keyChild).toString();
-                            child->setText(1, val);
-                            if(val == "not_put"){
-                                child->setBackgroundColor(0, Qt::red);
-                                child->setBackgroundColor(1, Qt::red);
-                            }
-                            if( val == "put"){
-                                child->setBackgroundColor(0, Qt::green);
-                                child->setBackgroundColor(1, Qt::green);
-                            }
-                            if( val == "sale"){
-                                child->setBackgroundColor(0, Qt::yellow);
-                                child->setBackgroundColor(1, Qt::yellow);
-                            }
                             item->addChild(child);
                         }
 
@@ -51,7 +37,7 @@ QList<QTreeWidgetItem *>  TreeJson::jsonInTreeView(QJsonObject root)
     return listitems;
 }
 
-void TreeJson::fillCboxCategories(Ui::MainWindow *_ui, QJsonObject root)
+void TreeJsonAddForm::fillCboxCategories(Ui::AddData *_ui, QJsonObject root)
 {
     _ui->insertBox->clear();
     QJsonValue jv = root.value("list");
@@ -65,4 +51,3 @@ void TreeJson::fillCboxCategories(Ui::MainWindow *_ui, QJsonObject root)
         }
     }
 }
-

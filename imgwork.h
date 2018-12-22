@@ -2,11 +2,11 @@
 #define IMGWORK_H
 
 #include <QObject>
-#include <QDebug>
 #include <QPixmap>
 #include <QFileDialog>
 #include <QAbstractItemModel>
 #include <QLabel>
+#include <QDebug>
 
 
 class ImgWork: public QObject

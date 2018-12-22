@@ -159,7 +159,7 @@
      <string>Sale</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_8">
+   <widget class="QPushButton" name="listTravelBtn">
     <property name="geometry">
      <rect>
       <x>350</x>
@@ -169,7 +169,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>Create Travel List</string>
     </property>
    </widget>
    <widget class="QPushButton" name="cardTravelBtn">
@@ -205,45 +205,6 @@
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
-   <widget class="Line" name="wline">
-    <property name="geometry">
-     <rect>
-      <x>320</x>
-      <y>640</y>
-      <width>351</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
-    </property>
-   </widget>
-   <widget class="Line" name="wline_2">
-    <property name="geometry">
-     <rect>
-      <x>310</x>
-      <y>310</y>
-      <width>20</width>
-      <height>381</height>
-     </rect>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Vertical</enum>
-    </property>
-   </widget>
-   <widget class="Line" name="wline_3">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>290</y>
-      <width>641</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
     </property>
    </widget>
    <widget class="QTreeWidget" name="treeWidget">
@@ -296,19 +257,6 @@
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="Line" name="wline_4">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>640</y>
-      <width>321</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
-    </property>
-   </widget>
    <widget class="QPushButton" name="insertBtn">
     <property name="geometry">
      <rect>
@@ -353,22 +301,6 @@
     </property>
     <property name="text">
      <string>del</string>
-    </property>
-   </widget>
-   <widget class="Line" name="line">
-    <property name="geometry">
-     <rect>
-      <x>240</x>
-      <y>570</y>
-      <width>16</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">width: 1px</string>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Vertical</enum>
     </property>
    </widget>
   </widget>

@@ -33,7 +33,11 @@ SOURCES += \
     imgwork.cpp \
     treejson.cpp \
     jsonwork.cpp \
-    formcardtraveler.cpp
+    formcardtraveler.cpp \
+    formlisttravel.cpp \
+    adddatafunction.cpp \
+    treelisthandler.cpp \
+    treejsonaddform.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -41,12 +45,17 @@ HEADERS += \
     adddata.h \
     imgwork.h \
     treejson.h \
-    formcardtraveler.h
+    formcardtraveler.h \
+    formlisttravel.h \
+    treelisthandler.h \
+    treejsonaddform.h \
+    entities.h
 
 FORMS += \
         mainwindow.ui \
     adddata.ui \
-    formcardtraveler.ui
+    formcardtraveler.ui \
+    formlisttravel.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

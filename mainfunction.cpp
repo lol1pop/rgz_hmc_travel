@@ -1,11 +1,10 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "treejson.h"
-#include <QKeyEvent>
-#include <QTreeView>
 #include <QTreeWidgetItem>
-#include <QAbstractItemModel>
 #include "jsonwork.cpp"
+
+
 
 
 void viewDataBase(Ui::MainWindow* _ui){
@@ -41,11 +40,11 @@ int searchComboBox(Ui::MainWindow* _ui){
     case 0:
         return 2;
     case 1:
-        return 3;
-    case 2:
         return 5;
-    case 3:
+    case 2:
         return 6;
+    case 3:
+        return 7;
     default:
         return 0;
     }
@@ -66,11 +65,10 @@ void initTreeView(Ui::MainWindow* _ui,QString val ){
 
    if(val != ""){
        root = parseJson(val);
-   }else{
-      root = parseJson();
-   }
-
    QList<QTreeWidgetItem *> listitems = TreeJson::jsonInTreeView(root);
    _ui->treeWidget->addTopLevelItems(listitems);
    TreeJson::fillCboxCategories(_ui,root);
+   }
 }
+
+

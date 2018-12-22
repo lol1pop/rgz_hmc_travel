@@ -2,11 +2,9 @@
 #define ADDDATA_H
 
 #include <QWidget>
-#include <QFileDialog>
-#include <QtDebug>
 #include "imgwork.h"
 #include "database.h"
-#include "mainwindow.h"
+
 namespace Ui {
 class AddData;
 }
@@ -27,6 +25,7 @@ private:
     QByteArray photo;
     QString link;
     Ui::AddData *ui;
+    QString strJsonList;
 
 public:
     explicit AddData(QWidget *parent = nullptr);
@@ -34,8 +33,12 @@ public:
 
 private slots:
     void on_loadBtn_clicked();
-
     void on_addBtn_clicked();
+    void on_addCategoriesButton_clicked();
+    void on_addStaffButton_clicked();
+    void on_delSelBtn_clicked();
+    void initalComponents();
+
 private:
     bool initEdit();
 
