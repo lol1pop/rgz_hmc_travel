@@ -28,16 +28,16 @@ QList<QTreeWidgetItem *>  TreeJson::jsonInTreeView(QJsonObject root)
                             QString val = subtreeChild.value(keyChild).toString();
                             child->setText(1, val);
                             if(val == "not_put"){
-                                child->setBackgroundColor(0, Qt::red);
-                                child->setBackgroundColor(1, Qt::red);
+                                child->setBackgroundColor(0, QColor(255,0,0,127));
+                                child->setBackgroundColor(1, QColor(255,0,0,127));
                             }
                             if( val == "put"){
-                                child->setBackgroundColor(0, Qt::green);
-                                child->setBackgroundColor(1, Qt::green);
+                                child->setBackgroundColor(0, QColor(29,120,29,127));
+                                child->setBackgroundColor(1, QColor(29,120,29,127));
                             }
                             if( val == "sale"){
-                                child->setBackgroundColor(0, Qt::yellow);
-                                child->setBackgroundColor(1, Qt::yellow);
+                                child->setBackgroundColor(0, QColor(163,163,42,127));
+                                child->setBackgroundColor(1, QColor(163,163,42,127));
                             }
                             item->addChild(child);
                         }

@@ -4,10 +4,16 @@
 #include <QWidget>
 #include "imgwork.h"
 #include "database.h"
+#include "mainwindow.h"
+#pragma once
+#include <functional>
+#include <iostream>
 
 namespace Ui {
 class AddData;
 }
+
+typedef void(MainWindow::*t_updateMainFunc)();
 
 class AddData : public QWidget
 {
@@ -26,9 +32,11 @@ private:
     QString link;
     Ui::AddData *ui;
     QString strJsonList;
+    t_updateMainFunc updateMainFunc;
+    std::function<void()> updatFun;
 
 public:
-    explicit AddData(QWidget *parent = nullptr);
+    explicit AddData(QWidget *parent = nullptr,std::function<void()> = nullptr);
     ~AddData();
 
 private slots:
@@ -38,6 +46,9 @@ private slots:
     void on_addStaffButton_clicked();
     void on_delSelBtn_clicked();
     void initalComponents();
+    void updateDataBase();
+
+    void on_AddData_destroyed();
 
 private:
     bool initEdit();

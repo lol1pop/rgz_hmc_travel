@@ -1,5 +1,50 @@
 <RCC>
     <qresource prefix="/">
         <file>style.css</file>
+        <file>icon.png</file>
+    </qresource>
+    <qresource prefix="/tur">
+        <file>res/foto/Armen.jpg</file>
+        <file>res/foto/Avstraljpg.jpg</file>
+        <file>res/foto/Canada.jpg</file>
+        <file>res/foto/Cheh.jpg</file>
+        <file>res/foto/Efiop.jpg</file>
+        <file>res/foto/Egypt.jpg</file>
+        <file>res/foto/Ispan.jpg</file>
+        <file>res/foto/Niderl.jpg</file>
+        <file>res/foto/OA.jpg</file>
+        <file>res/foto/Philip.jpg</file>
+        <file>res/foto/Shvec.jpg</file>
+        <file>res/foto/Svazilend.jpg</file>
+        <file>res/foto/Thai.jpg</file>
+        <file>res/foto/Vietnam.jpg</file>
+        <file>res/foto/Zeland.jpg</file>
+    </qresource>
+    <qresource prefix="/foto">
+        <file>res/foto2/five.jpg</file>
+        <file>res/foto2/four.jpg</file>
+        <file>res/foto2/one.jpg</file>
+        <file>res/foto2/six.jpg</file>
+        <file>res/foto2/three.jpg</file>
+        <file>res/foto2/two.jpg</file>
+    </qresource>
+    <qresource prefix="/icon">
+        <file>res/icon/icon_(1).png</file>
+        <file>res/icon/icon_(2).png</file>
+        <file>res/icon/icon_(3).png</file>
+        <file>res/icon/icon_(4).png</file>
+        <file>res/icon/icon_(5).png</file>
+        <file>res/icon/icon_(6).png</file>
+        <file>res/icon/icon_(7).png</file>
+        <file>res/icon/icon_(8).png</file>
+        <file>res/icon/icon_(9).png</file>
+        <file>res/icon/icon_(10).png</file>
+        <file>res/icon/iconbtn(1).png</file>
+        <file>res/icon/iconbtn(2).png</file>
+        <file>res/icon/status(1).png</file>
+        <file>res/icon/status(2).png</file>
+        <file>res/icon/status(3).png</file>
+        <file>res/icon/status(4).png</file>
+        <file>res/icon/status(5).png</file>
     </qresource>
 </RCC>

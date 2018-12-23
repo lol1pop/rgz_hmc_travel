@@ -37,7 +37,8 @@ SOURCES += \
     formlisttravel.cpp \
     adddatafunction.cpp \
     treelisthandler.cpp \
-    treejsonaddform.cpp
+    treejsonaddform.cpp \
+    forminfo.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -49,13 +50,15 @@ HEADERS += \
     formlisttravel.h \
     treelisthandler.h \
     treejsonaddform.h \
-    entities.h
+    entities.h \
+    forminfo.h
 
 FORMS += \
         mainwindow.ui \
     adddata.ui \
     formcardtraveler.ui \
-    formlisttravel.ui
+    formlisttravel.ui \
+    forminfo.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -75,3 +78,4 @@ before_build.commands = chcp 1251
 
 RESOURCES += \
     style.qrc
+

@@ -9,6 +9,7 @@
 #include "database.h"
 #include "formcardtraveler.h"
 #include "formlisttravel.h"
+#include "forminfo.h"
 
 namespace Ui {
 class MainWindow;
@@ -24,8 +25,10 @@ public:
     void editStatusTree(QString);
 private:
     void initalComponents();
+    void initStyle();
+    void updateBtn();
 
-private slots:
+private slots:    
     void on_updateBtn_clicked();
 
     void on_addBtn_clicked();

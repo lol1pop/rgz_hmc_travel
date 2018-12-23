@@ -7,17 +7,30 @@
 #include <QPoint>
 #include <QMessageBox>
 
+#include "mainwindow.h"
+
 
 FormCardTraveler::FormCardTraveler(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::FormCardTraveler)
 {
+    initStyle();
     ui->setupUi(this);
 }
 
 FormCardTraveler::~FormCardTraveler()
 {
     delete ui;
+}
+
+void FormCardTraveler::initStyle()
+{
+    setWindowIcon(QIcon(":/icon.png"));
+
+   // ui->pushButton->setIcon(QIcon(":/icon/res/icon/icon_(4).png"));
+   //   ui->addPhotoBtn->setIcon(QIcon(":/icon/res/icon/icon_(6).png"));
+//    ui->addImgBtn->setIcon(QIcon(":/icon/res/icon/icon_(6).png"));
+//    ui->addImgBtn_2->setIcon(QIcon(":/icon/res/icon/icon_(6).png"));
 }
 
 void FormCardTraveler::on_addPhotoBtn_clicked()
@@ -89,8 +102,10 @@ void FormCardTraveler::on_pushButton_clicked()
     painter.translate((-1)*(imgRect.width() + 50) ,img2Rect.height() + 50);
     text.drawContents(&painter, textRect);
     QMessageBox::information(this,"Name Search:", "TravelCard.pdf create!!");
+
     close();
     }else{
          QMessageBox::information(this,"Name Search:", "Заполните все поля!!");
     }
+
 }

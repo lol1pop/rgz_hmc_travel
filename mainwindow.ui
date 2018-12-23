@@ -39,40 +39,58 @@
    <widget class="QPushButton" name="removeBtn">
     <property name="geometry">
      <rect>
-      <x>560</x>
-      <y>20</y>
-      <width>80</width>
+      <x>520</x>
+      <y>80</y>
+      <width>111</width>
       <height>51</height>
      </rect>
     </property>
     <property name="text">
      <string>remove</string>
     </property>
+    <property name="iconSize">
+     <size>
+      <width>50</width>
+      <height>50</height>
+     </size>
+    </property>
    </widget>
    <widget class="QPushButton" name="updateBtn">
     <property name="geometry">
      <rect>
-      <x>560</x>
-      <y>140</y>
-      <width>81</width>
+      <x>620</x>
+      <y>0</y>
+      <width>51</width>
       <height>51</height>
      </rect>
     </property>
     <property name="text">
-     <string>update</string>
+     <string/>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>50</width>
+      <height>50</height>
+     </size>
     </property>
    </widget>
    <widget class="QPushButton" name="addBtn">
     <property name="geometry">
      <rect>
-      <x>560</x>
-      <y>80</y>
-      <width>80</width>
+      <x>520</x>
+      <y>130</y>
+      <width>111</width>
       <height>51</height>
      </rect>
     </property>
     <property name="text">
      <string>add</string>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>50</width>
+      <height>50</height>
+     </size>
     </property>
    </widget>
    <widget class="QComboBox" name="searchBox">
@@ -124,39 +142,57 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>570</y>
-      <width>51</width>
-      <height>31</height>
+      <y>530</y>
+      <width>71</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
      <string>Put</string>
     </property>
+    <property name="iconSize">
+     <size>
+      <width>40</width>
+      <height>40</height>
+     </size>
+    </property>
    </widget>
    <widget class="QPushButton" name="unPutBtn">
     <property name="geometry">
      <rect>
-      <x>70</x>
-      <y>570</y>
-      <width>51</width>
-      <height>31</height>
+      <x>80</x>
+      <y>530</y>
+      <width>81</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
      <string>UnPut</string>
     </property>
+    <property name="iconSize">
+     <size>
+      <width>40</width>
+      <height>40</height>
+     </size>
+    </property>
    </widget>
    <widget class="QPushButton" name="saleBtn">
     <property name="geometry">
      <rect>
-      <x>130</x>
-      <y>570</y>
-      <width>51</width>
-      <height>31</height>
+      <x>160</x>
+      <y>530</y>
+      <width>71</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
      <string>Sale</string>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>40</width>
+      <height>40</height>
+     </size>
     </property>
    </widget>
    <widget class="QPushButton" name="listTravelBtn">
@@ -211,9 +247,9 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>310</y>
+      <y>320</y>
       <width>301</width>
-      <height>261</height>
+      <height>211</height>
      </rect>
     </property>
     <column>
@@ -260,22 +296,28 @@
    <widget class="QPushButton" name="insertBtn">
     <property name="geometry">
      <rect>
-      <x>260</x>
-      <y>570</y>
+      <x>270</x>
+      <y>530</y>
       <width>41</width>
-      <height>31</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
-     <string>add</string>
+     <string/>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>40</width>
+      <height>40</height>
+     </size>
     </property>
    </widget>
    <widget class="QComboBox" name="insertBox">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>610</y>
-      <width>131</width>
+      <y>600</y>
+      <width>121</width>
       <height>22</height>
      </rect>
     </property>
@@ -283,9 +325,9 @@
    <widget class="QLineEdit" name="insertEdit">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>610</y>
-      <width>171</width>
+      <x>130</x>
+      <y>600</y>
+      <width>181</width>
       <height>21</height>
      </rect>
     </property>
@@ -293,14 +335,69 @@
    <widget class="QPushButton" name="delBtn">
     <property name="geometry">
      <rect>
-      <x>190</x>
-      <y>570</y>
-      <width>51</width>
-      <height>31</height>
+      <x>230</x>
+      <y>530</y>
+      <width>41</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
-     <string>del</string>
+     <string/>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>40</width>
+      <height>40</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>300</y>
+      <width>281</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Минимальный список вещей для этого Тура:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>580</y>
+      <width>301</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Для добавления вещи или категории нажми зеленый плюс</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>630</y>
+      <width>181</width>
+      <height>21</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>630</y>
+      <width>91</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Новая Категоря</string>
     </property>
    </widget>
   </widget>

@@ -17,6 +17,7 @@ public:
     QPixmap photoSlot;
     QPixmap imgSlot;
     QPixmap img2Slot;
+    void initStyle();
 
 private slots:
     void on_addPhotoBtn_clicked();

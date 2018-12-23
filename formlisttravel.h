@@ -18,8 +18,10 @@ public:
     QPixmap imgSlot;
     int lenghtList;
     int position;
+    int yorPos;
     explicit FormListTravel(QWidget *parent = nullptr, Tur *ture = nullptr );
     ~FormListTravel();
+    void initStyle();
 
 
 private slots:
@@ -30,6 +32,10 @@ private slots:
     void on_editBtn_clicked();
 
     void on_clearBtn_clicked();
+
+    void on_leftBtn_clicked();
+
+    void on_rightBtn_clicked();
 
 private:
     Ui::FormListTravel *ui;

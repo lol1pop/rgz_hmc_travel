@@ -69,7 +69,11 @@ border-width: 0px;</string>
     </rect>
    </property>
    <property name="text">
-    <string>add</string>
+    <string>add photo</string>
+   </property>
+   <property name="icon">
+    <iconset resource="style.qrc">
+     <normaloff>:/icon/res/icon/icon_(6).png</normaloff>:/icon/res/icon/icon_(6).png</iconset>
    </property>
   </widget>
   <widget class="QLabel" name="imgSlot">
@@ -120,7 +124,11 @@ border-width: 0px;</string>
     </rect>
    </property>
    <property name="text">
-    <string>add</string>
+    <string>add passport</string>
+   </property>
+   <property name="icon">
+    <iconset resource="style.qrc">
+     <normaloff>:/icon/res/icon/icon_(6).png</normaloff>:/icon/res/icon/icon_(6).png</iconset>
    </property>
   </widget>
   <widget class="QPushButton" name="addImgBtn_2">
@@ -133,7 +141,11 @@ border-width: 0px;</string>
     </rect>
    </property>
    <property name="text">
-    <string>add</string>
+    <string>add ticket</string>
+   </property>
+   <property name="icon">
+    <iconset resource="style.qrc">
+     <normaloff>:/icon/res/icon/icon_(6).png</normaloff>:/icon/res/icon/icon_(6).png</iconset>
    </property>
   </widget>
   <widget class="QWidget" name="verticalLayoutWidget">
@@ -191,14 +203,24 @@ border-width: 0px;</string>
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>570</x>
-     <y>380</y>
+     <x>580</x>
+     <y>390</y>
      <width>121</width>
      <height>71</height>
     </rect>
    </property>
    <property name="text">
-    <string>Save Card Travel</string>
+    <string>Save </string>
+   </property>
+   <property name="icon">
+    <iconset resource="style.qrc">
+     <normaloff>:/icon/res/icon/icon_(4).png</normaloff>:/icon/res/icon/icon_(4).png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>50</width>
+     <height>50</height>
+    </size>
    </property>
   </widget>
   <widget class="QLabel" name="label">
@@ -218,6 +240,8 @@ border-width: 0px;</string>
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="style.qrc"/>
+ </resources>
  <connections/>
 </ui>

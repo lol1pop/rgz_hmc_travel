@@ -13,8 +13,10 @@ FormListTravel::FormListTravel(QWidget *parent, Tur* ture) :
     QWidget(parent),
     ui(new Ui::FormListTravel)
 {
+    initStyle();
     if(ture != nullptr){ this->tur = *ture; qDebug() << "tur" << this->tur.name << " : "<< this->tur.img; } else{ qDebug() << "tur = nullptr";}
     this->position = 0;
+    this->yorPos = 0;
     this->lenghtList = 0;
     ui->setupUi(this);
 
@@ -25,12 +27,27 @@ FormListTravel::~FormListTravel()
     delete ui;
 }
 
+void FormListTravel::initStyle()
+{
+    setWindowIcon(QIcon(":/icon.png"));
+}
+
 void FormListTravel::on_saveBatn_clicked()
 {
+
     if(!imgSlot.isNull() && !ui->nameEdit->text().isEmpty() && !ui->routEdit->toPlainText().isEmpty() && !ui->reportEdit->toPlainText().isEmpty()){
+
+        if(yorPos == listCart.length()){
         Cart newCart(imgSlot,ui->nameEdit->text(),ui->routEdit->toPlainText(),ui->reportEdit->toPlainText());
         this->listCart.push_back(newCart);
         qDebug() << "new " << newCart.name;
+        yorPos = listCart.length();
+        qDebug()<<" edit your position:" <<yorPos;}else{
+            listCart[yorPos].img = imgSlot;
+            listCart[yorPos].name = ui->nameEdit->text();
+            listCart[yorPos].route = ui->routEdit->toPlainText();
+            listCart[yorPos].node = ui->reportEdit->toPlainText();
+        }
     }else{
          QMessageBox::information(this,"Save:", "Заполните все поля!!");
     }
@@ -135,4 +152,50 @@ void FormListTravel::on_clearBtn_clicked()
     ui->nameEdit->clear();
     ui->routEdit->clear();
     ui->reportEdit->clear();
+}
+
+void FormListTravel::on_leftBtn_clicked()
+{
+    qDebug()<<"your position:" <<yorPos;
+    if(listCart.length() != 0){
+        if(yorPos != 0 && yorPos <= listCart.length() ){
+            yorPos --;
+            qDebug()<<" edit your position:" <<yorPos;
+            ui->imgSlot->setPixmap(listCart[yorPos].img);
+            imgSlot = listCart[yorPos].img;
+            ui->nameEdit->setText(listCart[yorPos].name);
+            ui->routEdit->setText(listCart[yorPos].route);
+            ui->reportEdit->setText(listCart[yorPos].node);
+        }
+        if(yorPos > listCart.length()){
+             yorPos --;
+             qDebug()<<" edit your position:" <<yorPos;
+        }
+    }
+}
+
+void FormListTravel::on_rightBtn_clicked()
+{
+    qDebug()<<"your position:" <<yorPos;
+    if(listCart.length() != 0){
+        if(yorPos == listCart.length()  -1){
+            yorPos ++;
+            qDebug()<<" edit your position:" <<yorPos;
+            ui->imgSlot->clear();
+            ui->imgSlot->setText("Добавте картинку ");
+            ui->nameEdit->clear();
+            ui->routEdit->clear();
+            ui->reportEdit->clear();
+        }
+        if(yorPos < listCart.length()-1){
+            yorPos ++;
+            qDebug()<<" edit your position:" <<yorPos;
+            ui->imgSlot->setPixmap(listCart[yorPos].img);
+            imgSlot = listCart[yorPos].img;
+            ui->nameEdit->setText(listCart[yorPos].name);
+            ui->routEdit->setText(listCart[yorPos].route);
+            ui->reportEdit->setText(listCart[yorPos].node);
+        }
+
+    }
 }

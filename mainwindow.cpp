@@ -9,10 +9,14 @@
 #include <QMessageBox>
 #include "entities.h"
 
+#pragma once
+#include <functional>
+#include <iostream>
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
-{
+{   
     ui->setupUi(this);
     initalComponents();
 }
@@ -24,19 +28,40 @@ MainWindow::~MainWindow()
 
 void MainWindow::initalComponents()
 {
+    initStyle();
     initComboBox(ui);
     viewDataBase(ui);
     initTreeView(ui, "");
 }
 
+void MainWindow::initStyle()
+{
+    setWindowIcon(QIcon(":/icon.png"));
+    ui->updateBtn->setIcon(QIcon(":/icon/res/icon/icon_(5).png"));
+    ui->addBtn->setIcon(QIcon(":/icon/res/icon/iconbtn(2).png"));
+    ui->delBtn->setIcon(QIcon(":/icon/res/icon/status(5).png"));
+    ui->putBtn->setIcon(QIcon(":/icon/res/icon/status(2).png"));
+    ui->saleBtn->setIcon(QIcon(":/icon/res/icon/status(1).png"));
+    ui->unPutBtn->setIcon(QIcon(":/icon/res/icon/status(4).png"));
+    ui->insertBtn->setIcon(QIcon(":/icon/res/icon/status(3).png"));
+    ui->removeBtn->setIcon(QIcon(":/icon/res/icon/iconbtn(1).png"));
+}
+
+void MainWindow::updateBtn()
+{
+    viewDataBase(ui);
+
+}
+
 void MainWindow::on_updateBtn_clicked()
 {
-   viewDataBase(ui);
+    FormInfo *info1 = new FormInfo(nullptr);
+    info1->show();
 }
 
 void MainWindow::on_addBtn_clicked()
 {
-    AddData *ad = new AddData();
+    AddData *ad = new AddData(nullptr, [&](){MainWindow::updateBtn();});
     ad->show();
 }
 
@@ -96,8 +121,8 @@ void MainWindow::editStatusTree(QString status)
 void MainWindow::on_putBtn_clicked()
 {
     if( ui->treeWidget->currentItem()->text(1) != "status"){
-        ui->treeWidget->currentItem()->setBackgroundColor(0,Qt::green);
-        ui->treeWidget->currentItem()->setBackgroundColor(1,Qt::green);
+        ui->treeWidget->currentItem()->setBackgroundColor(0,QColor(29,120,29,127));
+        ui->treeWidget->currentItem()->setBackgroundColor(1,QColor(29,120,29,127));
         ui->treeWidget->currentItem()->setText(1,"put");
         editStatusTree("put");}
 }
@@ -105,8 +130,8 @@ void MainWindow::on_putBtn_clicked()
 void MainWindow::on_unPutBtn_clicked()
 {
     if( ui->treeWidget->currentItem()->text(1) != "status"){
-        ui->treeWidget->currentItem()->setBackgroundColor(0,Qt::red);
-        ui->treeWidget->currentItem()->setBackgroundColor(1,Qt::red);
+        ui->treeWidget->currentItem()->setBackgroundColor(0,QColor(255,0,0,127));
+        ui->treeWidget->currentItem()->setBackgroundColor(1,QColor(255,0,0,127));
         ui->treeWidget->currentItem()->setText(1,"not_put");
         editStatusTree("not_put");}
 }
@@ -114,8 +139,8 @@ void MainWindow::on_unPutBtn_clicked()
 void MainWindow::on_saleBtn_clicked()
 {
     if( ui->treeWidget->currentItem()->text(1) != "status"){
-        ui->treeWidget->currentItem()->setBackgroundColor(0,Qt::yellow);
-        ui->treeWidget->currentItem()->setBackgroundColor(1,Qt::yellow);
+        ui->treeWidget->currentItem()->setBackgroundColor(0,QColor(163,163,42,127));
+        ui->treeWidget->currentItem()->setBackgroundColor(1,QColor(163,163,42,127));
         ui->treeWidget->currentItem()->setText(1,"sale");
         editStatusTree("sale");}
 }
@@ -123,8 +148,18 @@ void MainWindow::on_saleBtn_clicked()
 
 void MainWindow::on_insertBtn_clicked()
 {
+    if(!ui->lineEdit->text().isEmpty()){
 
-    if(!ui->insertEdit->text().isEmpty()){
+        QString strJsonList(ui->tableView->model()->data(ui->tableView->model()->index(ui->tableView->currentIndex().row(),4)).toString());
+        QJsonObject jsonList(insertToJson(strJsonList,ui->lineEdit->text()));
+        QJsonDocument doc(jsonList);
+        QString strJson(doc.toJson(QJsonDocument::Compact));
+        ui->tableView->model()->setData(ui->tableView->model()->index(ui->tableView->currentIndex().row(),4),strJson);
+        QString list(ui->tableView->model()->data(ui->tableView->model()->index(ui->tableView->currentIndex().row(),4)).toString());
+        ui->lineEdit->clear();
+        initTreeView(ui, list);
+    } else {
+     if(!ui->insertEdit->text().isEmpty()){
     QString categories(ui->insertBox->currentText());
     QString staff(ui->insertEdit->text());
     QString strJsonList(ui->tableView->model()->data(ui->tableView->model()->index(ui->tableView->currentIndex().row(),4)).toString());
@@ -133,9 +168,10 @@ void MainWindow::on_insertBtn_clicked()
     QString strJson(doc.toJson(QJsonDocument::Compact));
     ui->tableView->model()->setData(ui->tableView->model()->index(ui->tableView->currentIndex().row(),4),strJson);
     QString list(ui->tableView->model()->data(ui->tableView->model()->index(ui->tableView->currentIndex().row(),4)).toString());
-    initTreeView(ui, list);}else{
+    initTreeView(ui, list);
+     }else{
         QMessageBox::information(this,"add Tree","А Можно добовлять не пустоту?");
-    }
+    }}
 
 }
 

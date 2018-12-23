@@ -9,9 +9,9 @@ int main(int argc, char *argv[])
 {
 
     QApplication a(argc, argv);
-//    QFile file(":/style.css");
-//     file.open(QFile::ReadOnly);
-//     a.setStyleSheet(file.readAll());
+    QFile file(":/style.css");
+     file.open(QFile::ReadOnly);
+    a.setStyleSheet(file.readAll());
     Database db;
     db.initDataBase();
     db.createDataBase();
@@ -55,7 +55,7 @@ int main(int argc, char *argv[])
                }
            ]
        }   )";
-    db.createNodeAdventure("Вино и виноград","Абхазия","Новосибирск-Абхазия",list,14,"самолет","солнечно",ImgWork::setImg(ImgWork::loadImg("C:/Users/cplfa/Pictures/10424487.jpg",0,0)),"qweqwe");
+    db.createNodeAdventure("Вино и виноград","Абхазия","Новосибирск-Абхазия",list,14,"самолет","солнечно",ImgWork::setImg(ImgWork::loadImg(":/tur/res/foto/OA.jpg",0,0)),"qweqwe");
     list = R"({
            "list": [
                {
@@ -86,7 +86,7 @@ int main(int argc, char *argv[])
                }
            ]
        })";
-    db.createNodeAdventure("Музыка и танцы","Аргентина","Новосибирск-Москва-Аргентина",list,10,"машина","ветренно",ImgWork::setImg(ImgWork::loadImg("C:/Users/cplfa/Pictures/FUuMd10EBls.jpg",0,0)),"arey");
+    db.createNodeAdventure("Музыка и танцы","Аргентина","Новосибирск-Москва-Аргентина",list,10,"машина","ветренно",ImgWork::setImg(ImgWork::loadImg(":/tur/res/foto/Egypt.jpg",0,0)),"arey");
     list = R"({
            "list": [
                {
@@ -117,7 +117,7 @@ int main(int argc, char *argv[])
                }
            ]
        })";
-    db.createNodeAdventure("Морепродукты и сухофрукты","Вьетнам","Иркутск-Вьетнам",list,8,"самолет-автобус","облачно", ImgWork::setImg(ImgWork::loadImg("C:/Users/cplfa/Pictures/s150102.jpg",0,0)),"arty");
+    db.createNodeAdventure("Морепродукты и сухофрукты","Вьетнам","Иркутск-Вьетнам",list,8,"самолет-автобус","облачно", ImgWork::setImg(ImgWork::loadImg(":/tur/res/foto/Philip.jpg",0,0)),"arty");
    /*  db.createNodeAdventure("Вода и солнцу","Греция","Санкт-Петербург - Греция","sgj",16,"поезд","солнечно","sgjhf");
     db.createNodeAdventure("Солнце и песок","Египет","Томск-Египет","sgj",24,"самолет","дождь","dgjf");
     db.createNodeAdventure("Пицца и паста","Италия","Москва-Италия","sgj",6,"самолет-корабль","солнечно","sfgdh");

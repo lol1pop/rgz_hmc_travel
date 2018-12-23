@@ -3,12 +3,14 @@
 #include <QMessageBox>
 #include "adddatafunction.cpp"
 
-AddData::AddData(QWidget *parent) :
+AddData::AddData(QWidget *parent,std::function<void()> updateMAin) :
     QWidget(parent),
     ui(new Ui::AddData)
 {
+    setWindowIcon(QIcon(":/icon.png"));
     ui->setupUi(this);
     initalComponents();
+    this->updatFun = updateMAin;
 
 }
 
@@ -20,6 +22,11 @@ void AddData::initalComponents()
 {
     QString list("{\"list\": []}");
     initTreeView(ui, list);
+}
+
+void AddData::updateDataBase()
+{
+    updatFun();
 }
 
 void AddData::on_loadBtn_clicked()
@@ -40,6 +47,7 @@ void AddData::on_addBtn_clicked()
                                        wether,
                                        photo,
                                        link);
+        updateDataBase();
          this->close();
     }
 
@@ -138,3 +146,8 @@ void AddData::on_delSelBtn_clicked()
 }
 
 
+
+void AddData::on_AddData_destroyed()
+{
+
+}

@@ -135,7 +135,17 @@ color: rgb(0, 0, 0);</string>
     </font>
    </property>
    <property name="text">
-    <string>save</string>
+    <string> add</string>
+   </property>
+   <property name="icon">
+    <iconset resource="style.qrc">
+     <normaloff>:/icon/res/icon/icon_(7).png</normaloff>:/icon/res/icon/icon_(7).png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>25</width>
+     <height>25</height>
+    </size>
    </property>
   </widget>
   <widget class="QPushButton" name="rightBtn">
@@ -159,14 +169,24 @@ color: rgb(0, 0, 0);</string>
   <widget class="QPushButton" name="editBtn">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>430</y>
-     <width>161</width>
-     <height>31</height>
+     <x>130</x>
+     <y>410</y>
+     <width>91</width>
+     <height>61</height>
     </rect>
    </property>
    <property name="text">
-    <string>edit and save</string>
+    <string>SAVE</string>
+   </property>
+   <property name="icon">
+    <iconset resource="style.qrc">
+     <normaloff>:/icon/res/icon/icon_(4).png</normaloff>:/icon/res/icon/icon_(4).png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>55</width>
+     <height>55</height>
+    </size>
    </property>
   </widget>
   <widget class="QPushButton" name="addImg">
@@ -180,6 +200,10 @@ color: rgb(0, 0, 0);</string>
    </property>
    <property name="text">
     <string>load picture</string>
+   </property>
+   <property name="icon">
+    <iconset resource="style.qrc">
+     <normaloff>:/icon/res/icon/icon_(6).png</normaloff>:/icon/res/icon/icon_(6).png</iconset>
    </property>
   </widget>
   <widget class="QPushButton" name="clearBtn">
@@ -196,6 +220,8 @@ color: rgb(0, 0, 0);</string>
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="style.qrc"/>
+ </resources>
  <connections/>
 </ui>
