@@ -1,0 +1,37 @@
+tur("Путешествие в историю","Испания","Мадрид-Барселона-Ибица","foto\Ispan.jpg","{"list": [{categoryname":"одежда","stuff:[{"name":"футболка","status":"not_put"},{"name":"шорты","status":"not_put"},{name":"джинсы","status":"not_put"},{name":"кепка","status":"not_put"},{"name":"купальник","status":"not_put"}]},{"categoryname":"обувь":"stuff:[{"name":"кроссовки","status":"not_put"}]}]}",24,"самолет","солнечно");
+
+tur("Неизведанный мир","Австралия","Канберра-Сидней-Мельбурн","foto\Avstraljpg.jpg ","{"list": [{categoryname":"одежда","stuff:[{"name":"футболка","status":"not_put"},{"name":"джинсы","status":"not_put"},{name":"кофта","status":"not_put"},{name":"шорты","status":"not_put"}]},{"categoryname":"обувь":"stuff:[{"name":"сандали","status":"not_put"},{"name":"кроссовки","status":"not_put"}]}]}",18,"самолет","засуха");
+
+tur("Удивительная и суровая Швеция","Швеция","Стокгольм-Лапландия-Копенгаген","foto\Shvec.jpg ","{"list": [{categoryname":"одежда","stuff:[{"name":"пуховик","status":"not_put"},{"name":"джинсы","status":"not_put"},{name":"колготки","status":"not_put"},{name":"кофта","status":"not_put"}]},{"categoryname":"обувь":"stuff:[{"name":"валенки","status":"not_put"},{"name":"ботинки","status":"not_put"}]}]}",15,"поезд","снегопад");
+
+tur("Художественное наследие","Нидерланды","Амстердам-Роттердам","foto\Niderl.jpg ","{"list": [{categoryname":"одежда","stuff:[{"name":"куртка","status":"not_put"},{"name":"джинсы","status":"not_put"},{name":"футболки","status":"not_put"},{name":"джемпер","status":"not_put"}]},{"categoryname":"обувь":"stuff:[{"name":"кроссовки","status":"not_put"},{"name":"ботфорты","status":"not_put"}]}]}",18,"самолет","засуха");
+
+tur("Тур по Вьетнаму","Вьетнам","Ханой-Хошимин-Мельбурн","foto\Vietnam.jpg ","{"list": [{categoryname":"одежда","stuff:[{"name":"футболка","status":"not_put"},{"name":"шорты","status":"not_put"},{name":"купальник","status":"not_put"},{name":"парео","status":"not_put"}]},{"categoryname":"обувь":"stuff:[{"name":"сандали","status":"not_put"},{"name":"кроссовки","status":"not_put"}]}]}",12,"самолет","зной");
+
+tur("Белоснежный песок и голубые воды","ОАЭ","Абу-Даби-Дубай","foto\OA.jpg ","{"list": [{categoryname":"одежда","stuff:[{"name":"футболка","status":"not_put"},{"name":"бриджы","status":"not_put"},{name":"купальник","status":"not_put"},{name":"поло","status":"not_put"}]},{"categoryname":"обувь":"stuff:[{"name":"сандали","status":"not_put"},{"name":"шлепки","status":"not_put"}]}]}",17,"лайнер","солнечно");
+
+tur("Жемчужина Атлантики","Канада","Монреаль-Квебек-Оттава","foto\Canada.jpg ","{"list": [{categoryname":"одежда","stuff:[{"name":"куртка","status":"not_put"},{"name":"шапка","status":"not_put"},{name":"свитер","status":"not_put"},{name":"штаны","status":"not_put"}]},{"categoryname":"обувь":"stuff:[{"name":"ботинки зимние","status":"not_put"},{"name":"ботинки для сноуборда","status":"not_put"}]}]}",14,"самолет","снегопад");
+
+tur("Дворцы Нового времени и замки Средних веков","Чехия","Прага-Карловы Вары-Либерец","foto\Cheh.jpg ","{"list": [{categoryname":"одежда","stuff:[{"name":"куртка","status":"not_put"},{"name":"футболка","status":"not_put"},{name":"джинсы","status":"not_put"},{name":"свитер","status":"not_put"}]},{"categoryname":"обувь":"stuff:[{"name":"сапоги","status":"not_put"},{"name":"кроссовки","status":"not_put"}]}]}",20,"поезд","пасмурно");
+
+tur("В тропический рай Тайланда","Тайланд","Бангкок-Пхукет","foto\Thai.jpg ","{"list": [{categoryname":"одежда","stuff:[{"name":"футболка","status":"not_put"},{"name":"купальник","status":"not_put"},{name":"шорты","status":"not_put"},{name":"парео","status":"not_put"}]},{"categoryname":"обувь":"stuff:[{"name":"сандали","status":"not_put"},{"name":"кроссовки","status":"not_put"}]}]}",15,"самолет","солнечно");
+
+tur("Современная арабская музыка и кинопродукция","Египет","Каир-Гиза-Александрия","foto\Egypt.jpg ","{"list": [{categoryname":"одежда","stuff:[{"name":"бриджи","status":"not_put"},{"name":"поло","status":"not_put"},{name":"джемпер","status":"not_put"},{name":"джинсы","status":"not_put"}]},{"categoryname":"обувь":"stuff:[{"name":"сандали","status":"not_put"},{"name":"кроссовки","status":"not_put"}]}]}",18,"самолет","сухо");
+
+tur("Религиозное наследие","Армения","Ереван-Арарат","foto\Armen.jpg ","{"list": [{categoryname":"одежда","stuff:[{"name":"кофта","status":"not_put"},{"name":"штаны","status":"not_put"},{name":"джинсы","status":"not_put"},{name":"куртка","status":"not_put"}]},{"categoryname":"обувь":"stuff:[{"name":"кроссовки","status":"not_put"},{"name":"ботинки","status":"not_put"}]}]}",17,"поезд","снегопад");
+
+tur("Погружение в красочную природу","Новая Зеландия","Веллингтон-Окленд-Гамильтон","foto\Zeland.jpg ","{"list": [{categoryname":"одежда","stuff:[{"name":"футболка","status":"not_put"},{"name":"штаны","status":"not_put"},{name":"свитер","status":"not_put"},{name":"джемпер","status":"not_put"}]},{"categoryname":"обувь":"stuff:[{"name":"кроссовки","status":"not_put"},{"name":"полуботинки","status":"not_put"}]}]}",21,"пароход","солнечно");
+
+tur("Маленькое королевство Свазиленд","Свазиленд","Мбабане-Манзини","foto\Svazilend.jpg ","{"list": [{categoryname":"одежда","stuff:[{"name":"костюм","status":"not_put"},{"name":"рубашка","status":"not_put"},{name":"поло","status":"not_put"},{name":"джемпер","status":"not_put"}]},{"categoryname":"обувь":"stuff:[{"name":"ботинки","status":"not_put"},{"name":"сабо","status":"not_put"}]}]}",15,"самолет","ясно");
+
+
+tur("Государство на семи тысячах островов","Филиппины","Боракай-Миндоро","foto\Philip.jpg ","{"list": [{categoryname":"одежда","stuff:[{"name":"футболка","status":"not_put"},{"name":"шорты","status":"not_put"},{name":"платье","status":"not_put"},{name":"сарафан","status":"not_put"}]},{"categoryname":"обувь":"stuff:[{"name":"сандали","status":"not_put"},{"name":"сланцы","status":"not_put"}]}]}",19,"самолет","пасмурно");
+
+tur("Цари гробниц","Эфиопия","Аддис-Абеба","foto\Efiop.jpg ","{"list": [{categoryname":"одежда","stuff:[{"name":"футболка","status":"not_put"},{"name":"майка","status":"not_put"},{name":"шорты","status":"not_put"},{name":"штаны","status":"not_put"}]},{"categoryname":"обувь":"stuff:[{"name":"сандали,"status":"not_put"},{"name":"кроссовки","status":"not_put"}]}]}",14,"самолет","туман");
+
+
+
+
+
+Ghbdrhysufgval;hvin
+
