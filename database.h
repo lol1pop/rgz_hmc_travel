@@ -30,7 +30,15 @@ public:
                              QString wether,
                              QByteArray photo,
                              QString link);
-
+    static void createNodeAdventure(QString name,
+                             QString country,
+                             QString route,
+                             QByteArray photo,
+                             QString list_things,
+                             int lasting,
+                             QString trans,
+                             QString wether,
+                             QString link);
 protected:
     void sqlQuery(QString _newquery);
     void sqlQuery(QSqlQuery query);

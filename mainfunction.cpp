@@ -27,6 +27,7 @@ void viewDataBase(Ui::MainWindow* _ui){
     _ui->tableView->setColumnHidden (3,true);
     _ui->tableView->setColumnHidden (4,true);
     _ui->tableView->setColumnHidden (8,true);
+    _ui->tableView->setColumnHidden (9,true);
 
 }
 void initComboBox(Ui::MainWindow* _ui){
